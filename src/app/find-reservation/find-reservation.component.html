@@ -1,0 +1,107 @@
+<app-encabezado></app-encabezado>
+
+<section class="banner_area">
+  <div class="space_img d_flex align-items-center">
+    <div class="overlay img_secunadario" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
+    </div>
+  </div>
+
+</section>
+
+<section class="complete_height">
+  <div class="container">
+    <div class="row">
+
+      <div class="row col-md-12">
+
+        <div class="col-md-12">
+          <div></div>
+          <div class="fondo_div">
+            <h3>Busqueda de reservacion</h3>
+            <input type="text" class="input_design" placeholder="Ingresa tu numero de reservacion">
+
+
+            <table class="table table-bordered" style="margin-top: 20px;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">nombres</th>
+                  <th scope="col">apellidos</th>
+                  <th scope="col">Fecha in</th>
+                  <th scope="col">Fecha out</th>
+
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td class="settings">
+                    <div>
+                      <i class="fa fa-edit" data-toggle="modal" data-target="#exampleModal"></i>
+                    </div>
+                    <div>
+                      <i class="fa fa-trash"></i> </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row col-md-12">
+            <div class="column col-md-12">
+              <Label>Nombres</Label> <br>
+              <div class="row col-md-12">
+                <input type="text" placeholder="titular" style="width: 100%;">
+              </div>
+            </div>
+            <div class="column col-md-12">
+                <Label>Apellidos</Label> <br>
+                <div class="row col-md-12">
+                  <input type="text" placeholder="titular" style="width: 100%;">
+                </div>
+              </div>
+          </div>
+          <div class="row col-md-12">
+            <div class="column col-md-6">
+              <Label>Fecha check In</Label>
+              <input type="date">
+            </div>
+
+            <div class="column col-md-6">
+              <Label>Fecha check Out</Label>
+              <input type="date">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+<app-encabezado></app-encabezado>
+
+<section class="banner_area">
+  <div class="space_img d_flex align-items-center">
+    <div class="overlay img_secunadario" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
+    </div>
+  </div>
+
+</section>
+
+<section class="">
+  <div class="container">
+    <div class="row">
+
+      <div class="row col-md-12">
+          <router-outlet></router-outlet>
+
+        <div class="col-md-7">
+          <div>
+            <h3>Falta poco para terminar tu reservacion</h3>
+          </div>
+          <form [formGroup]="formulararioReservacion">
+            <div class="fondo_div">
+              <h4>¿Quien sera el titular de la reservacion?</h4>
+              <span style="font-size: 18px; font-weight: 500;">Titular</span>
+              <p style="font-size: 14px;">Será responsable de hacer el check-in y el check-out en el
+                alojamiento</p>
+              <div class="row col-md-12 nospace">
+                <div class="form-group col-md-6 pad-left-o">
+                  <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                    for="traveler-first-name-0">Nombres</label>
+                  <input type="text" class="form-control" formControlName="nombres" id="firstname" name="firstname"
+                    placeholder="Nombres del titular">
+                </div>
+
+                <div class="form-group col-md-6 pad-left-o">
+                  <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                    for="traveler-first-name-0">Apellidos</label>
+                  <input type="text" class="form-control" id="lastname" formControlName="apellidos" name="lastname"
+                    placeholder="Apellidos del titular">
+                </div>
+              </div>
+              <h4>Fechas de check in y check out</h4>
+              <div class="xdf">
+                <div class="row">
+                  <div class="input-field col s3">
+                    <div class="xa">Llegada: {{ formulararioReservacion.get('fecha_in').value}} </div>
+                  </div>
+
+                  <div class="input-field col s3">
+                    <div class="xa">Salida: {{ formulararioReservacion.get('fecha_out').value}} </div>
+                  </div>
+
+                  <div class="col s12">
+                    <a data-toggle="modal" data-target="#exampleModal"> Modificar fechas </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </form>
+          <form [formGroup]="formulararioTarjeta">
+            <div class="fondo_div">
+              <div class="col-lg-12">
+                <div class="form-group pad-left-o">
+                  <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                    for="traveler-first-name-0">Nombre del titular de la tarjeta</label>
+                  <input type="text" class="form-control jp-card-valid valid" formControlName="titular" id="tfirstname"
+                    name="tfirstname" placeholder="Nombre del titular de la tarjeta" aria-invalid="false"><label
+                    id="tfirstname-error" class="error active" for="tfirstname" style="display: none;"></label>
+                </div>
+
+                <div class="form-group pad-left-o">
+                  <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                    for="traveler-first-name-0">Número de tarjeta</label>
+                  <input type="text" formControlName="numero" class="form-control unknown jp-card-invalid valid"
+                    id="number" name="number" placeholder="Número de tarjeta" aria-invalid="false"><label
+                    id="number-error" class="error active" for="number" style="display: none;"></label>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 6px;">
+                  <div class="row" style="margin-right: -15px; margin-left: -15px;">
+                    <div class="col-lg-6">
+                      <div class="form-group pad-left-o">
+                        <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                          for="traveler-first-name-0">MM /YY</label>
+                        <input type="text" formControlName="fecha" class="form-control valid jp-card-invalid"
+                          id="expiry" name="expiry" placeholder="MM/YY" aria-invalid="false"><label id="expiry-error"
+                          class="error active" for="expiry" style="display: none;"></label>
+                      </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group pad-left-o">
+                        <label style="font-size: 10px; color: #0065b8;" class="eva-3-label-form -md active"
+                          for="traveler-first-name-0">CVV</label>
+                        <input type="text" formControlName="cv" class="form-control jp-card-valid valid" id="cvc"
+                          name="cvc" placeholder="CVV" aria-invalid="false"><label id="cvc-error" class="error active"
+                          for="cvc" style="display: none;"></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-lg-12"
+              style="padding: 5px 30px 10px;margin-top: 28px; background-color: #fff; border-bottom: 2px solid #cccccc; ">
+              <h4>Detalle de tu reservación <i class="shifu-3-icon-hotels" title="Alojamientos"></i> </h4>
+              <div class="row">
+                <div class="col-lg-12">
+                  <span style="font-weight:600;">
+                    {{ formulararioReservacion.get('destino').value}} <span><img style="width: 5%;"></span>
+                  </span>
+
+                </div>
+
+                <div class="col-lg-12">
+                  Tipo de plan: Todo Incluido </div>
+                <div class="col-lg-12">
+                  Tipo de habitación: Habitación Estándar </div>
+                <div class="col-lg-12">
+                  Cantidad habitaciones: {{ formulararioReservacion.get('cantidad_cuartos').value}}
+                  <br> Cantidad adultos: {{ formulararioReservacion.get('cantidad_adultos').value}}
+                  <br> Cantidad niños:{{ formulararioReservacion.get('cantidad_ninios').value}} <br>
+                </div>
+
+                <div class="col-lg-12 futureDate" style="margin-top:10px;">
+                  Fechas <br> Check in: {{ formulararioReservacion.get('fecha_in').value}} Check out:
+                  {{ formulararioReservacion.get('fecha_out').value}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 position_botton">
+            <button class="estiloBotton" (click)="onSubmit()">COMPLETAR RESERVACION</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row col-md-12">
+          <div class="column col-md-6">
+            <Label>Fecha check In</Label>
+            <input type="date">
+          </div>
+
+          <div class="column col-md-6">
+            <Label>Fecha check Out</Label>
+            <input type="date">
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
